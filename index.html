@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flixor – Benvenuto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    video.bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    img.logo {
+      max-width: 320px;
+      margin-bottom: 30px;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin: 0;
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff;
+    }
+
+    p {
+      font-size: 1.4em;
+      color: #ccc;
+      margin-top: 10px;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .enter-btn {
+      margin-top: 40px;
+      padding: 15px 35px;
+      background-color: transparent;
+      color: #00bfff;
+      border: 2px solid #00bfff;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+    }
+
+    .enter-btn:hover {
+      background-color: #00bfff;
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video background -->
+  <video autoplay muted loop class="bg-video">
+    <source src="https://cdn.coverr.co/videos/coverr-tv-flickering-4504/720p.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay with content -->
+  <div class="overlay">
+    <img src="flixor-logo.png" alt="Flixor Logo" class="logo">
+    <h1>Benvenuto su Flixor</h1>
+    <p>Il tuo universo. In streaming.</p>
+    <button class="enter-btn" onclick="window.location.href='/jellyfin';">ENTRA</button>
+  </div>
+
+</body>
+</html>
